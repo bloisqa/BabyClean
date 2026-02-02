@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Baby Clean - L'expert Propreté</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -40,28 +41,45 @@
 
         nav a:hover { color: #d32f2f; }
 
-        /* Hero Section */
+        /* Hero */
         .hero { 
             background: linear-gradient(135deg, #0067b8 0%, #00a0e9 100%);
-            padding: 40px 20px 80px 20px;
+            padding: 60px 20px 90px;
             color: white;
-            text-align: center;
         }
 
-        .logo { 
-            max-width: 250px; 
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
+        .hero-content {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
         }
 
-        h1 { font-size: 2.5em; margin: 10px 0; font-weight: 800; text-transform: uppercase;}
+        .hero img {
+            width: 420px;
+            transform: translateX(-40px);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+        }
 
-        /* Statistiques */
+        .hero-text h1 {
+            font-size: 2.6em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .hero-text p {
+            font-size: 1.05em;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        /* Stats */
         .stats-container {
             max-width: 900px;
-            margin: -40px auto 40px;
+            margin: -40px auto 60px;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -78,10 +96,35 @@
             border-top: 4px solid #d32f2f;
         }
 
-        .stat-card h2 { color: #0067b8; margin: 0; font-size: 1.8em; }
-        .stat-card p { font-size: 0.8em; color: #666; margin: 5px 0 0; font-weight: bold; text-transform: uppercase;}
+        .stat-card h2 { 
+            color: #0067b8; 
+            margin: 0; 
+            font-size: 1.8em; 
+        }
 
-        /* Footer & Réseaux Sociaux */
+        .stat-card p { 
+            font-size: 0.8em; 
+            color: #666; 
+            margin-top: 5px; 
+            font-weight: bold; 
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero img {
+                transform: none;
+                width: 100%;
+                max-width: 360px;
+            }
+        }
+
+        /* Footer */
         footer {
             padding: 40px;
             background: white;
@@ -108,9 +151,12 @@
             display: inline-block;
         }
 
-        .copyright { font-size: 0.85em; }
+        .copyright {
+            font-size: 0.85em;
+        }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -123,9 +169,27 @@
 </header>
 
 <div class="hero">
-    <img src="logo.jpg" alt="Baby Clean Logo" class="logo">
-    <h1>Expertise Propreté</h1>
-    <p>Intervention d'élite pour restaurer l'ordre après le passage de vos petits monstres.</p>
+    <div class="hero-content">
+        <img src="autolaveuse.jpg" alt="Autolaveuse professionnelle">
+
+        <div class="hero-text">
+            <h1>Expertise Propreté</h1>
+        <ul class="hero-list">
+                <li>Largeur de travail brosses (mm)	430</li>
+		<li>Largeur d'aspiration (mm)	850</li>
+		<li>Puissance absorbée (W)	1400</li>
+		<li>Réservoir eau propre/sale (l)	35 / 35</li>
+		<li>Pression des brosses (g/cm²)	30 / 40</li>
+		<li>Vitesse de rotation des brosses (U/min)	180</li>
+		<li>Rendement surfacique	1720</li>
+		<li>Fréquence (Hz)	50</li>
+		<li>Voltage (V)	230</li>
+		<li>Poids (kg)	48</li>
+		<li>Dimensions (l x L x h) (mm)	1136 x 505 x 1030</li>
+
+            </ul>
+        </div>
+    </div>
 </div>
 
 <div class="stats-container">
@@ -139,15 +203,15 @@
     </div>
     <div class="stat-card">
         <h2>+400</h2>
-        <p>Doudous sauvés</p>
+        <p>Kilomètres parcourus</p>
     </div>
 </div>
 
 <footer>
     <div class="social-links">
-        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
     </div>
     <div class="copyright">
         &copy; 2026 Baby Clean - Solutions professionnelles pour parents exigeants.
@@ -161,7 +225,7 @@
 <script>
     document.body.addEventListener('click', function() {
         const audio = document.getElementById('bgMusic');
-        if (audio.paused) { audio.play(); }
+        if (audio.paused) audio.play();
     }, { once: true });
 </script>
 
